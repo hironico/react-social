@@ -1,6 +1,6 @@
 # @hironico/react-social
 
-@hironico/react-social is a React component library that simplifies the integration of solcial login buttons for major login providers on the Internet such as Google, Facebook, ...
+@hironico/react-social is a React component library that simplifies the integration of social login buttons for major login providers on the Internet such as Google, Facebook, ...
 
 The goals of this project are : 
 - speed up the time to implement social login for react apps
