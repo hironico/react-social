@@ -1,0 +1,59 @@
+{
+  "name": "@hironico/react-social",
+  "version": "1.0.0",
+  "description": "Google, Facebook ... OAuth2 using providers identity services SDKs for React",
+  "private": false,
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "LICENSE",
+    "README.md"
+  ],
+  "scripts": {
+    "clean": "rimraf out-tsc dist",
+    "compile": "rimraf out-tsc && tsc",
+    "roll": "rimraf dist && rollup -c rollup.config.js",
+    "build": "rimraf dist out-tsc && tsc && rollup -c rollup.config.mjs",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "react",
+    "oauth",
+    "google",
+    "facebook",
+    "oauth2",
+    "authentication",
+    "login",
+    "react-social",
+    "react-facebook",
+    "react-google"
+  ],
+  "author": "hironico.net",
+  "license": "MIT",
+  "dependencies": {
+    "@types/google.accounts": "^0.0.7",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "5.0.1"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^25.0.1",
+    "@rollup/plugin-node-resolve": "^15.1.0",
+    "@types/node": "^20.3.1",
+    "@types/react": "^18.2.6",
+    "@types/react-dom": "^18.2.4",
+    "concurrently": "^5.3.0",
+    "deepmerge": "^4.2.2",
+    "rimraf": "^3.0.2",
+    "rollup": "^3.25.1",
+    "rollup-plugin-dts": "^5.3.0",
+    "typescript": "^4.9.5"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <11"
+  ]
+}
