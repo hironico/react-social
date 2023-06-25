@@ -52,7 +52,7 @@ Note: you can support multiple social login providers at the same time ! This al
 
 ### Sandbox
 
-You can checkout the app folder for a sandbox application that demaonstrates how to integrate social logins for an app.
+Checkout the app folder for a sandbox application that demonstrates how to integrate social logins for an app.
 
 You must create a .env file (see .env-sample) that will contain your app IDs for the login providers (Google, Facebook). 
 
