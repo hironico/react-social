@@ -1,6 +1,6 @@
 {
   "name": "@hironico/react-social",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Google, Facebook ... OAuth2 using providers identity services SDKs for React",
   "private": false,
   "main": "dist/index.js",
