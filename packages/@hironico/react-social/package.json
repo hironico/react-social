@@ -32,6 +32,10 @@
   ],
   "author": "hironico.net",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hironico/react-social.git"
+  },
   "dependencies": {
     "@types/google.accounts": "^0.0.7",
     "react": "^18.2.0",

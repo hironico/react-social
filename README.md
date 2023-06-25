@@ -6,7 +6,7 @@ The goals of this project are :
 - speed up the time to implement social login for react apps
 - provide a template application as a boilerplate for starting a new project.
 
-## Supported login profiders
+## Supported login providers
 
 The two major login providers are supported. Howwever, @hironico/react-social is designed to welcome as many provider as needed.
 
