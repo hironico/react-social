@@ -103,3 +103,4 @@ Then place login buttons somewhere on your welcome or login page that resides wi
 @hironico/react-social is [MIT licensed][LICENSE]. Copyright (c) 2023-present, hironico.net.
 
 [npm-home]: https://www.npmjs.com/package/@hironico/react-social
+[LICENSE]: https://github.com/hironico/react-social/blob/main/packages/%40hironico/react-social/LICENSE
