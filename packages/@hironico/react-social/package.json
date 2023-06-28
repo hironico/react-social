@@ -1,6 +1,6 @@
 {
   "name": "@hironico/react-social",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Google, Facebook ... OAuth2 using providers identity services SDKs for React",
   "private": false,
   "main": "dist/index.js",
@@ -16,6 +16,7 @@
     "compile": "rimraf out-tsc && tsc",
     "roll": "rimraf dist && rollup -c rollup.config.js",
     "build": "rimraf dist out-tsc && tsc && rollup -c rollup.config.mjs",
+    "postbuild": "node ./tools/postbuild.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
