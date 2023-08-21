@@ -9,7 +9,7 @@ rimraf.sync('@hironico');
 
 process.chdir('..');
 
-console.log('Updating package in the sandbox app...');
+console.log('Updating package in the sandbox web app...');
 exec('npm install', (err, stdout, stderr) => {
     if (err) {
         // node couldn't execute the command
@@ -19,5 +19,18 @@ exec('npm install', (err, stdout, stderr) => {
     }
 
     console.log(stdout);
-    console.log('End of POST build script.');
+
+    console.log('Building the sandbox web app with updated package...');
+    exec('npm run build', (err, stdout, stderr) => {
+        if (err) {
+            // node couldn't execute the command
+            console.log('Could not build the sandbox reference app using npm run build.');
+            console.log(stderr);
+            return;
+        }
+    
+        console.log(stdout);
+
+        console.log('End of POST build script.');
+    });
 });
