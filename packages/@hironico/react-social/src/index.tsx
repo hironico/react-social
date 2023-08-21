@@ -4,7 +4,7 @@ export type { FacebookProfilePictureData, FBProfilePicture, FacebookPublicProfil
 export { FacebookLoginButton } from './components';
 export { FacebookLogoutButton } from './components';
 
-export type { UseGoogleAccessTokenOptions, GoogleUserProfile, UseGoogleProfileOptions, GoogleLoginProperties } from './components';
+export type { UseGoogleAccessTokenOptions, GoogleUserProfile, UseGoogleProfileOptions, GoogleLoginProperties, GoogleUxMode } from './components';
 export { GoogleLoginButton } from './components';
 export { GoogleLogoutButton } from './components';
 

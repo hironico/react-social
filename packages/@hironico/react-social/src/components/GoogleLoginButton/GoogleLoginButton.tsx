@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { useLoadGsiScript, UseLoadGsiScriptOptions, useGoogleAccessToken, useGoogleProfile} from "../../hooks";
+import React, { useEffect, useState } from "react";
+import { useLoadGsiScript, UseLoadGsiScriptOptions, useGoogleAccessToken, useGoogleProfile, useLoginContext} from "../../hooks";
 
 export interface UseGoogleAccessTokenOptions {
     clientId: string,
@@ -21,27 +21,48 @@ export interface UseGoogleProfileOptions {
     errorCallback: (message: string) => void;
 }
 
+export type GoogleUxMode = 'popup' | 'redirect';
+
 export interface GoogleLoginProperties {
     clientId: string;
-    buttonConfig: google.accounts.id.GsiButtonConfiguration;
+    buttonConfig: google.accounts.id.GsiButtonConfiguration;    
     errorCallback: (message: string) => void;
-}
 
+    uxMode?: GoogleUxMode;
+    redirectUrl?: string; 
+    userProfileUrl?: string; 
+}
 
 export default function GoogleLoginButton(props: GoogleLoginProperties) {
     const [ credential, setCredential] = useState<google.accounts.id.CredentialResponse>(null!);
+    const { saveGoogle } = useLoginContext();
 
     const { clientId, buttonConfig, errorCallback } = props;
 
     const onScriptLoadSuccess = () => {
-        console.log('GSI client script load SUCCESS!');
+        if (props.uxMode === 'redirect' && props.userProfileUrl) {
+            fetch(props.userProfileUrl)
+            .then(response => response.status === 200 ? response.json() : null)
+            .then(data => {
+                console.log('Google user profile found if any: ' + JSON.stringify(data, null, 4));
+                data === null ? renderGoogleLoginButton() : saveGoogle(data);
+            });
+        } else {
+            renderGoogleLoginButton();
+        }
+    }
 
+    const renderGoogleLoginButton = () => {
+        console.log('Render Google Login button...');
+        setCredential(null!);
         try {                        
             google.accounts.id.initialize({
                 client_id: clientId,
                 context: 'signin',
-                callback: setCredential,
-                itp_support: true
+                callback: props.uxMode === 'redirect' ? null! : setCredential,
+                itp_support: true,
+                ux_mode: props.uxMode ? props.uxMode : 'popup',
+                login_uri: props.redirectUrl
             });
 
             const buttonDiv = document.getElementById('buttonDiv');
@@ -63,6 +84,12 @@ export default function GoogleLoginButton(props: GoogleLoginProperties) {
             if (errorCallback) errorCallback(JSON.stringify(error));
         }
     }
+
+    // hook to rerender in case of change in the props
+    useEffect(() => {
+        console.log('Rerender google login button because props changed...');
+        renderGoogleLoginButton();
+    }, [props.uxMode, props.redirectUrl, props.userProfileUrl, props.clientId]);
 
     const opts: UseLoadGsiScriptOptions = {
         scriptUrl: 'https://accounts.google.com/gsi/client',

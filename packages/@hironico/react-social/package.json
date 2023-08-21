@@ -14,7 +14,7 @@
   "scripts": {
     "clean": "rimraf out-tsc dist",
     "compile": "rimraf out-tsc && tsc",
-    "roll": "rimraf dist && rollup -c rollup.config.js",
+    "roll": "rimraf dist && rollup -c rollup.config.mjs",
     "build": "rimraf dist out-tsc && tsc && rollup -c rollup.config.mjs",
     "postbuild": "node ./tools/postbuild.js",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -50,6 +50,7 @@
     "@types/react": "^18.2.6",
     "@types/react-dom": "^18.2.4",
     "concurrently": "^5.3.0",
+    "copyfiles": "^2.4.1",
     "deepmerge": "^4.2.2",
     "rimraf": "^3.0.2",
     "rollup": "^3.25.1",
