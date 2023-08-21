@@ -57,3 +57,30 @@
   grid-template-columns: 1fr;
   justify-items: center;
 }
+
+.optionform {
+  display: grid;
+  grid-template-columns: 1fr;
+  padding: 5px;
+}
+
+.optionform label {
+  font-size: small;
+  justify-self: start;
+  align-self: end;
+  margin: 0px;
+  padding: 0px;
+}
+
+.optionform input {  
+  justify-self: stretch;
+  align-self: start;
+  margin-bottom: 10px;
+}
+
+.loginPanel {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  column-gap: 20px;
+}

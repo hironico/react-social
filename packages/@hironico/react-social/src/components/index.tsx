@@ -3,6 +3,6 @@ export type { FacebookProfilePictureData, FBProfilePicture, FacebookPublicProfil
 export { default as FacebookLoginButton } from './FacebookLoginButton';
 export { default as FacebookLogoutButton } from './FacebookLogoutButton';
 
-export type { UseGoogleAccessTokenOptions, GoogleUserProfile, UseGoogleProfileOptions, GoogleLoginProperties } from './GoogleLoginButton';
+export type { UseGoogleAccessTokenOptions, GoogleUserProfile, UseGoogleProfileOptions, GoogleLoginProperties, GoogleUxMode } from './GoogleLoginButton';
 export { default as GoogleLoginButton } from './GoogleLoginButton';
 export { default as GoogleLogoutButton } from './GoogleLogoutButton';

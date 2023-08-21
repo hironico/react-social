@@ -5,6 +5,7 @@ declare namespace FB {
         status: boolean;
         xfbml: boolean;
         version: string;
+        oauth?: boolean;
     }
     
     interface FBLoginStatusResponse {
@@ -29,6 +30,8 @@ declare namespace FB {
     function getLoginStatus(callback: (response: FBLoginStatusResponse) => void): void;
 
     function api(path: string, callback: (response: any) => void): void;
+
+    function login(callback: (response: any) => void): void;
 
     function logout(callback: (response: any) => void): void;
 }
